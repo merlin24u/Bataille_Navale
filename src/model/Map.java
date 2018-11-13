@@ -27,4 +27,7 @@ public class Map extends Observable {
 		return true;
 	}
 
+	public int getSize() {
+		return grid.length;
+	}
 }

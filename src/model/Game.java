@@ -41,4 +41,12 @@ public class Game {
 		return finished;
 	}
 
+	public Map getPlayerMap() {
+		return player1.getMyMap();
+	}
+
+	public Map getOppMap() {
+		return player1.getOpponentMap();
+	}
+
 }

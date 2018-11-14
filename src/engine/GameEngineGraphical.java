@@ -6,18 +6,15 @@ public class GameEngineGraphical {
 
 	private Game game;
 
-	private GamePainter gamePainter;
-
 	private GraphicalInterface gui;
 
-	public GameEngineGraphical(Game game, GamePainter gamePainter) {
+	public GameEngineGraphical(Game game) {
 		this.game = game;
-		this.gamePainter = gamePainter;
 	}
 
 	public void run() throws InterruptedException {
 
-		gui = new GraphicalInterface(this.gamePainter);
+		gui = new GraphicalInterface();
 		gui.paint();
 
 		while (!game.isFinished()) {

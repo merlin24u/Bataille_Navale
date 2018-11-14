@@ -4,15 +4,9 @@ import javax.swing.JFrame;
 
 public class GraphicalInterface {
 
-	private DrawingPanel panel;
-
-	public GraphicalInterface(GamePainter gamePainter) {
+	public GraphicalInterface() {
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		// attacher le panel contenant l'afficheur du game
-		this.panel = new DrawingPanel(gamePainter);
-		f.setContentPane(this.panel);
 
 		f.pack();
 		f.setVisible(true);
@@ -21,7 +15,6 @@ public class GraphicalInterface {
 	}
 
 	public void paint() {
-		panel.drawGame();
 	}
 
 }

@@ -3,6 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import view.ViewMap;
+import view.ViewPlayerMap;
+
 public class Map extends Observable {
 
 	private int nbMissedShot;

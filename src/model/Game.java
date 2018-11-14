@@ -1,5 +1,8 @@
 package model;
 
+import view.ViewOpponentMap;
+import view.ViewPlayerMap;
+
 public class Game {
 
 	public static final int onePlayer = 1;
@@ -15,7 +18,9 @@ public class Game {
 		switch (mode) {
 		case onePlayer:
 			Map mapPlayer1 = new Map();
+			mapPlayer1.addObserver(new ViewPlayerMap());
 			Map mapPlayer2 = new Map();
+			mapPlayer2.addObserver(new ViewOpponentMap());
 			player1 = new Human(mapPlayer1, mapPlayer2);
 			player2 = new Computer(mapPlayer2, mapPlayer1, new Random());
 			break;

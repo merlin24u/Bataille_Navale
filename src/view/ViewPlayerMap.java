@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.Observable;
 import javax.swing.BorderFactory;
-
 import model.Map;
 
 public class ViewPlayerMap extends ViewMap {

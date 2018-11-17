@@ -18,7 +18,7 @@ public class Map extends Observable {
 		for (int i = 0; i < 2; i++) {
 			posX = (int) (Math.random() * (SIZE - 1));
 			posY = (int) (Math.random() * (SIZE - 1));
-			vert = (int) (Math.random() * 1);
+			vert = (int) Math.round(Math.random());
 			b = Game.epoque.getBoat2Cases();
 			if (vert == 1)
 				b.setVertical();
@@ -28,7 +28,7 @@ public class Map extends Observable {
 
 		posX = (int) (Math.random() * (SIZE - 1));
 		posY = (int) (Math.random() * (SIZE - 1));
-		vert = (int) (Math.random() * 1);
+		vert = (int) Math.round(Math.random());
 		b = Game.epoque.getBoat4Cases();
 		if (vert == 1)
 			b.setVertical();

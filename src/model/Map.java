@@ -12,24 +12,32 @@ public class Map extends Observable {
 	public Map() {
 		grid = new int[SIZE][SIZE];
 		listBoat = new ArrayList<>();
+		int posX, posY, vert;
+		Boat b;
+
+		for (int i = 0; i < 2; i++) {
+			posX = (int) (Math.random() * (SIZE - 1));
+			posY = (int) (Math.random() * (SIZE - 1));
+			vert = (int) (Math.random() * 1);
+			b = Game.epoque.getBoat2Cases();
+			if (vert == 1)
+				b.setVertical();
+			b.setPos(posX, posY);
+			listBoat.add(b);
+		}
+
+		posX = (int) (Math.random() * (SIZE - 1));
+		posY = (int) (Math.random() * (SIZE - 1));
+		vert = (int) (Math.random() * 1);
+		b = Game.epoque.getBoat4Cases();
+		if (vert == 1)
+			b.setVertical();
+		b.setPos(posX, posY);
+		listBoat.add(b);
 	}
 
 	public void attack(int x, int y) {
 
-	}
-
-	/**
-	 * Place le bateau à l'indice i à la pos x y
-	 * 
-	 * @param i
-	 *            indice dans la liste listBoat
-	 * @param x
-	 *            pos x
-	 * @param y
-	 *            pos y
-	 */
-	public void placer(int i, int x, int y) {
-		this.listBoat.get(i).setPos(x, y);
 	}
 
 	public boolean allBoatDestroyed() {
@@ -41,7 +49,19 @@ public class Map extends Observable {
 		return true;
 	}
 
-	public int getSize() {
-		return grid.length;
+	public void update() {
+		setChanged();
+		this.notifyObservers();
 	}
+
+	@Override
+	public String toString() {
+		StringBuffer str = new StringBuffer();
+		for (Boat b : listBoat) {
+			str.append(b);
+		}
+
+		return str.toString();
+	}
+
 }

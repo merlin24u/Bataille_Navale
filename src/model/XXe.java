@@ -4,14 +4,12 @@ public class XXe implements Epoque {
 
 	@Override
 	public Boat getBoat4Cases() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Boat("Croiseur", 2, 4);
 	}
 
 	@Override
 	public Boat getBoat2Cases() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Boat("Voilier", 1, 2);
 	}
 
 }

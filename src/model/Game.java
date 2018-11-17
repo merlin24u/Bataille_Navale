@@ -12,9 +12,11 @@ public class Game {
 	private int mode;
 	private Player player1, player2;
 	private ViewMap viewMap1, viewMap2;
+	public static Epoque epoque;
 
-	public Game(int m) {
+	public Game(int m, Epoque e) {
 		mode = m;
+		epoque = e;
 		finished = false;
 
 		switch (mode) {
@@ -22,9 +24,13 @@ public class Game {
 			Map mapPlayer1 = new Map();
 			viewMap1 = new ViewPlayerMap(mapPlayer1);
 			mapPlayer1.addObserver(viewMap1);
+			mapPlayer1.update();
+
 			Map mapPlayer2 = new Map();
 			viewMap2 = new ViewOpponentMap(mapPlayer2);
 			mapPlayer2.addObserver(viewMap2);
+			mapPlayer2.update();
+
 			player1 = new Human(mapPlayer1, mapPlayer2);
 			player2 = new Computer(mapPlayer2, mapPlayer1, new Random());
 			break;

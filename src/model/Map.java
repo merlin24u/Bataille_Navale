@@ -3,6 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import view.ViewMap;
+import view.ViewPlayerMap;
+
 public class Map extends Observable {
 	public static final int SIZE = 10;
 	private int nbMissedShot;
@@ -37,4 +40,7 @@ public class Map extends Observable {
 		return true;
 	}
 
+	public int getSize() {
+		return grid.length;
+	}
 }

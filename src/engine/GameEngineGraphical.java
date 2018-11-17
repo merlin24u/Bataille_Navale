@@ -8,18 +8,23 @@ public class GameEngineGraphical {
 
 	private GraphicalInterface gui;
 
+	private static int timeIter = 1000 / 25;
+
 	public GameEngineGraphical(Game game) {
 		this.game = game;
 	}
 
 	public void run() throws InterruptedException {
 
-		gui = new GraphicalInterface();
-		gui.paint();
+		long tDeb, tFin;
+		gui = new GraphicalInterface(game);
 
 		while (!game.isFinished()) {
+			tDeb = System.currentTimeMillis();
 			game.evolve();
-			Thread.sleep(100);
+			gui.paint();
+			tFin = System.currentTimeMillis();
+			Thread.sleep(timeIter - (tDeb - tFin));
 		}
 	}
 

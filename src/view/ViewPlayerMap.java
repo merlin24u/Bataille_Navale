@@ -11,30 +11,14 @@ import model.Map;
 
 public class ViewPlayerMap extends ViewMap {
 
-	private Map map;
-
 	public ViewPlayerMap(Map m) {
-		map = m;
-		int size = Map.SIZE;
-		this.setPreferredSize(new Dimension(size * ViewMap.SCALE, size * ViewMap.SCALE));
-
-		this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		super(m);
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		repaint();
-	}
-
-	public void paint(Graphics g) {
-		super.paint(g);
-		System.out.println(map);
-		for (int i = 1; i < Map.SIZE ; i++) {
-			g.setColor(Color.MAGENTA);
-			g.drawLine(i*ViewMap.SCALE, 0, i*ViewMap.SCALE, this.getHeight());
-			g.drawLine(0,i*ViewMap.SCALE,this.getWidth(), i*ViewMap.SCALE );
-		}
-		
+	
+	
+	public void draw(Graphics g) {
+		System.out.println("Player");
 		for (Boat b  : map.getBoats()) {
 			int nbCases = b.getNbCases()*ViewMap.SCALE;
 			int xb = b.getPosX()*ViewMap.SCALE;
@@ -45,6 +29,5 @@ public class ViewPlayerMap extends ViewMap {
 			else
 				g.fillRect(xb, yb, nbCases, ViewMap.SCALE);
 		}
-		
 	}
 }

@@ -9,22 +9,15 @@ import model.Map;
 
 public class ViewOpponentMap extends ViewMap {
 
-	private Map map;
-
 	public ViewOpponentMap(Map m) {
-		map = m;
-		int size = Map.SIZE;
-		this.setPreferredSize(new Dimension(size * ViewMap.SCALE, size * ViewMap.SCALE));
-		this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		super(m);
 	}
 
 	@Override
-	public void update(Observable o, Object arg) {
-		repaint();
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		System.out.println("Oppenent");
 	}
 
-	public void paint(Graphics g) {
-		super.paint(g);
-		//System.out.println(map);
-	}
+	
 }

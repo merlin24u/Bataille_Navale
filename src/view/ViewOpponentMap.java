@@ -25,6 +25,6 @@ public class ViewOpponentMap extends ViewMap {
 
 	public void paint(Graphics g) {
 		super.paint(g);
-		System.out.println(map);
+		//System.out.println(map);
 	}
 }

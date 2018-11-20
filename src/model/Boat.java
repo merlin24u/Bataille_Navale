@@ -72,6 +72,10 @@ public class Boat {
 	public boolean isVertical() {
 		return vertical;
 	}
+	
+	public int getNbCases() {
+		return nbCases;
+	}
 
 	@Override
 	public String toString() {

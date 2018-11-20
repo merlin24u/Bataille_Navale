@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 public class Map extends Observable {
@@ -52,6 +53,10 @@ public class Map extends Observable {
 	public void update() {
 		setChanged();
 		this.notifyObservers();
+	}
+	
+	public List<Boat> getBoats(){
+		return this.listBoat;
 	}
 
 	@Override

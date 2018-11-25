@@ -1,5 +1,8 @@
 package model;
 
+import java.awt.Point;
+import controller.MapController;
+
 public class Human extends Player {
 
 	public Human(Map map1, Map map2) {
@@ -8,7 +11,14 @@ public class Human extends Player {
 
 	@Override
 	public void play() {
-		
+		MapController.setEnabled(true);
+		Point move;
+		do {
+			move = MapController.getMove();
+		} while (move.x == -1);
+		MapController.setEnabled(false);
+		super.getOpponentMap().attack(move.x, move.y);
+
 	}
 
 }

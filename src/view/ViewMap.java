@@ -15,20 +15,17 @@ import model.Map;
 public abstract class ViewMap extends JPanel implements Observer {
 
 	public static int SCALE = 50;
-	
 	protected Map map;
-	
+
 	protected ViewMap(Map m) {
 		map = m;
 		int size = Map.SIZE;
 		this.setPreferredSize(new Dimension(size * ViewMap.SCALE, size * ViewMap.SCALE));
 		this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		this.addMouseListener(new MapController());
 	}
-	
-	public abstract void draw(Graphics g) ;
-	
-	
+
+	public abstract void draw(Graphics g);
+
 	@Override
 	public void update(Observable o, Object arg) {
 		repaint();
@@ -39,14 +36,14 @@ public abstract class ViewMap extends JPanel implements Observer {
 
 		drawGrid(g);
 		draw(g);
-		//System.out.println(map);
+		// System.out.println(map);
 	}
-	
+
 	private void drawGrid(Graphics g) {
-		for (int i = 1; i < Map.SIZE ; i++) {
+		for (int i = 1; i < Map.SIZE; i++) {
 			g.setColor(Color.BLUE);
-			g.drawLine(i*ViewMap.SCALE, 0, i*ViewMap.SCALE, this.getHeight());
-			g.drawLine(0,i*ViewMap.SCALE,this.getWidth(), i*ViewMap.SCALE );
+			g.drawLine(i * ViewMap.SCALE, 0, i * ViewMap.SCALE, this.getHeight());
+			g.drawLine(0, i * ViewMap.SCALE, this.getWidth(), i * ViewMap.SCALE);
 		}
 	}
 }

@@ -46,7 +46,7 @@ public class Map extends Observable {
 	}
 
 	public void attack(int x, int y) {
-
+		update();
 	}
 
 	public boolean allBoatDestroyed() {

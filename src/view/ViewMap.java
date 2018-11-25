@@ -9,6 +9,7 @@ import java.util.Observer;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+import controller.MapController;
 import model.Map;
 
 public abstract class ViewMap extends JPanel implements Observer {
@@ -22,6 +23,7 @@ public abstract class ViewMap extends JPanel implements Observer {
 		int size = Map.SIZE;
 		this.setPreferredSize(new Dimension(size * ViewMap.SCALE, size * ViewMap.SCALE));
 		this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		this.addMouseListener(new MapController());
 	}
 	
 	public abstract void draw(Graphics g) ;

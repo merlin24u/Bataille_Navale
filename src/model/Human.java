@@ -12,13 +12,15 @@ public class Human extends Player {
 	@Override
 	public void play() {
 		MapController.setEnabled(true);
-		Point move;
-		do {
+		Point move = null;
+		try {
 			move = MapController.getMove();
-		} while (move.x == -1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("ok");
 		MapController.setEnabled(false);
 		super.getOpponentMap().attack(move.x, move.y);
-
 	}
 
 }

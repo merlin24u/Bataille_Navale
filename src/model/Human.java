@@ -13,14 +13,14 @@ public class Human extends Player {
 	public void play() {
 		MapController.setEnabled(true);
 		Point move = null;
+
 		try {
 			move = MapController.getMove();
+			super.getOpponentMap().attack(move.x, move.y);
+			MapController.setEnabled(false);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("ok");
-		MapController.setEnabled(false);
-		super.getOpponentMap().attack(move.x, move.y);
 	}
 
 }

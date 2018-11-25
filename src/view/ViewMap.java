@@ -36,7 +36,7 @@ public abstract class ViewMap extends JPanel implements Observer {
 
 		drawGrid(g);
 		draw(g);
-		// System.out.println(map);
+		System.out.println(map);
 	}
 
 	private void drawGrid(Graphics g) {

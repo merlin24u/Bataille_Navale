@@ -11,7 +11,7 @@ public class ViewPlayerMap extends ViewMap {
 	}
 
 	public void draw(Graphics g) {
-		// System.out.println("Player");
+		System.out.println("Player");
 		for (Boat b : map.getBoats()) {
 			int nbCases = b.getNbCases() * ViewMap.SCALE;
 			int xb = b.getPosX() * ViewMap.SCALE;

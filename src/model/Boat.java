@@ -77,7 +77,7 @@ public class Boat {
 		return nbCases;
 	}
 
-	public boolean checkPos(Boat b) {
+	public boolean checkPosition(Boat b) {
 		if (this.vertical && b.vertical) {
 			if (this.posX == b.posX) {
 				if (this.posY >= b.posY && this.posY <= (b.posY + b.nbCases))
@@ -101,6 +101,26 @@ public class Boat {
 		}
 
 		return true;
+	}
+
+	public boolean isShot(int x, int y) {
+		if (vertical) {
+			if (posX == x) {
+				if (y >= posY && y <= posY + nbCases) {
+					life--;
+					return true;
+				}
+			}
+		} else {
+			if (posY == y) {
+				if (x >= posX && x <= posX + nbCases) {
+					life--;
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	@Override

@@ -14,6 +14,6 @@ public class ViewOpponentMap extends ViewMap {
 
 	@Override
 	public void draw(Graphics g) {
-		//System.out.println("Oppenent");
+		System.out.println("Oppenent");
 	}
 }

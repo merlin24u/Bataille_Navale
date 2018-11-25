@@ -27,7 +27,7 @@ public class Map extends Observable {
 				if (vert == 1)
 					b.setVertical();
 				b.setPos(posX, posY);
-			} while (!checkPos(b));
+			} while (!checkPosition(b));
 			listBoat.add(b);
 		}
 
@@ -40,12 +40,20 @@ public class Map extends Observable {
 				if (vert == 1)
 					b.setVertical();
 				b.setPos(posX, posY);
-			} while (!checkPos(b));
+			} while (!checkPosition(b));
 			listBoat.add(b);
 		}
 	}
 
 	public void attack(int x, int y) {
+		grid[x][y] = MISSED;
+		for (Boat b : listBoat) {
+			if (b.isAlive() && b.isShot(x, y)) {
+				grid[x][y] = SUCCES;
+				break;
+			}
+		}
+
 		update();
 	}
 
@@ -58,9 +66,9 @@ public class Map extends Observable {
 		return true;
 	}
 
-	public boolean checkPos(Boat b) {
+	public boolean checkPosition(Boat b) {
 		for (Boat boat : listBoat) {
-			if (!boat.checkPos(b))
+			if (!boat.checkPosition(b))
 				return false;
 		}
 

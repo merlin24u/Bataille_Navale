@@ -37,12 +37,12 @@ public abstract class ViewMap extends JPanel implements Observer {
 
 		drawGrid(g);
 		draw(g);
-		System.out.println(map);
+		//System.out.println(map);
 	}
 	
 	private void drawGrid(Graphics g) {
 		for (int i = 1; i < Map.SIZE ; i++) {
-			g.setColor(Color.MAGENTA);
+			g.setColor(Color.BLUE);
 			g.drawLine(i*ViewMap.SCALE, 0, i*ViewMap.SCALE, this.getHeight());
 			g.drawLine(0,i*ViewMap.SCALE,this.getWidth(), i*ViewMap.SCALE );
 		}

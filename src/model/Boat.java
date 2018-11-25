@@ -72,9 +72,35 @@ public class Boat {
 	public boolean isVertical() {
 		return vertical;
 	}
-	
+
 	public int getNbCases() {
 		return nbCases;
+	}
+
+	public boolean checkPos(Boat b) {
+		if (this.vertical && b.vertical) {
+			if (this.posX == b.posX) {
+				if (this.posY >= b.posY && this.posY <= (b.posY + b.nbCases))
+					return false;
+			}
+		} else if (this.vertical && !b.vertical) {
+			if (b.posY >= this.posY && b.posY <= (this.posY + this.nbCases)) {
+				if (this.posX >= b.posX && this.posX <= (b.posX + b.nbCases))
+					return false;
+			}
+		} else if (!this.vertical && b.vertical) {
+			if (this.posY >= b.posY && this.posY <= (b.posY + b.nbCases)) {
+				if (b.posX >= this.posX && b.posX <= (this.posX + this.nbCases))
+					return false;
+			}
+		} else if (!this.vertical && !b.vertical) {
+			if (this.posY == b.posY) {
+				if (this.posX >= b.posX && this.posX <= (b.posX + b.nbCases))
+					return false;
+			}
+		}
+
+		return true;
 	}
 
 	@Override
@@ -82,5 +108,4 @@ public class Boat {
 		return "Boat [life=" + life + ", name=" + name + ", posX=" + posX + ", posY=" + posY + ", nbCases=" + nbCases
 				+ ", vertical=" + vertical + "]";
 	}
-
 }

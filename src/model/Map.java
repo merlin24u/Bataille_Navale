@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Observable;
 
 public class Map extends Observable {
+	public static final int MISSED = -1;
+	public static final int SUCCES = 1;
 	public static final int SIZE = 10;
 	private int nbMissedShot;
 	private int[][] grid;
@@ -17,24 +19,30 @@ public class Map extends Observable {
 		Boat b;
 
 		for (int i = 0; i < 2; i++) {
-			posX = (int) (Math.random() * (SIZE - 1));
-			posY = (int) (Math.random() * (SIZE - 1));
-			vert = (int) Math.round(Math.random());
 			b = Game.epoque.getBoat2Cases();
-			if (vert == 1)
-				b.setVertical();
-			b.setPos(posX, posY);
+			do {
+				posX = (int) (Math.random() * (SIZE - 1));
+				posY = (int) (Math.random() * (SIZE - 1));
+				vert = (int) Math.round(Math.random());
+				if (vert == 1)
+					b.setVertical();
+				b.setPos(posX, posY);
+			} while (!checkPos(b));
 			listBoat.add(b);
 		}
 
-		posX = (int) (Math.random() * (SIZE - 1));
-		posY = (int) (Math.random() * (SIZE - 1));
-		vert = (int) Math.round(Math.random());
-		b = Game.epoque.getBoat4Cases();
-		if (vert == 1)
-			b.setVertical();
-		b.setPos(posX, posY);
-		listBoat.add(b);
+		for (int i = 0; i < 1; i++) {
+			b = Game.epoque.getBoat4Cases();
+			do {
+				posX = (int) (Math.random() * (SIZE - 1));
+				posY = (int) (Math.random() * (SIZE - 1));
+				vert = (int) Math.round(Math.random());
+				if (vert == 1)
+					b.setVertical();
+				b.setPos(posX, posY);
+			} while (!checkPos(b));
+			listBoat.add(b);
+		}
 	}
 
 	public void attack(int x, int y) {
@@ -50,12 +58,21 @@ public class Map extends Observable {
 		return true;
 	}
 
+	public boolean checkPos(Boat b) {
+		for (Boat boat : listBoat) {
+			if (!boat.checkPos(b))
+				return false;
+		}
+
+		return true;
+	}
+
 	public void update() {
 		setChanged();
-		this.notifyObservers();
+		notifyObservers();
 	}
-	
-	public List<Boat> getBoats(){
+
+	public List<Boat> getBoats() {
 		return this.listBoat;
 	}
 

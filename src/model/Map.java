@@ -6,7 +6,7 @@ import java.util.Observable;
 
 public class Map extends Observable {
 	public static final int MISSED = -1;
-	public static final int SUCCES = 1;
+	public static final int SHOT = 1;
 	public static final int SIZE = 10;
 	private int nbMissedShot;
 	private int[][] grid;
@@ -46,15 +46,25 @@ public class Map extends Observable {
 	}
 
 	public void attack(int x, int y) {
-		grid[x][y] = MISSED;
-		for (Boat b : listBoat) {
-			if (b.isAlive() && b.isShot(x, y)) {
-				grid[x][y] = SUCCES;
-				break;
+		if (grid[x][y] != SHOT && grid[x][y] != MISSED) {
+			boolean shot = false;
+			for (Boat b : listBoat) {
+				if (b.isAlive() && b.isShot(x, y)) {
+					shot = true;
+					break;
+				}
 			}
-		}
 
-		update();
+			if (shot) {
+				grid[x][y] = SHOT;
+			} else {
+				grid[x][y] = MISSED;
+				nbMissedShot++;
+
+			}
+
+			update();
+		}
 	}
 
 	public boolean allBoatDestroyed() {
@@ -84,6 +94,10 @@ public class Map extends Observable {
 		return this.listBoat;
 	}
 
+	public int[][] getGrid() {
+		return grid;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer str = new StringBuffer();
@@ -93,5 +107,4 @@ public class Map extends Observable {
 
 		return str.toString();
 	}
-
 }

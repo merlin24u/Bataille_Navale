@@ -77,6 +77,7 @@ public class Boat {
 		return nbCases;
 	}
 
+	// ne fonctionne pas bien
 	public boolean checkPosition(Boat b) {
 		if (this.vertical && b.vertical) {
 			if (this.posX == b.posX) {

@@ -5,22 +5,29 @@ import controller.MapController;
 
 public class Human extends Player {
 
-	public Human(Map map1, Map map2) {
+	private MapController controller;
+
+	public Human(Map map1, Map map2, MapController mapController) {
 		super(map1, map2);
+		controller = mapController;
 	}
 
 	@Override
 	public void play() {
-		MapController.setEnabled(true);
+		controller.setEnabled(true);
 		Point move = null;
 
 		try {
-			move = MapController.getMove();
+			move = controller.getMove();
 			super.getOpponentMap().attack(move.x, move.y);
-			MapController.setEnabled(false);
+			controller.setEnabled(false);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public MapController getController() {
+		return controller;
 	}
 
 }

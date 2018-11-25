@@ -5,11 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-
-import controller.MapController;
 import model.Map;
 
 public abstract class ViewMap extends JPanel implements Observer {

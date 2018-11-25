@@ -7,8 +7,8 @@ import view.ViewMap;
 
 public class MapController implements MouseListener {
 
-	private static boolean enabled;
-	private static Point move;
+	private boolean enabled;
+	private Point move;
 
 	public MapController() {
 		enabled = false;
@@ -49,13 +49,13 @@ public class MapController implements MouseListener {
 
 	}
 
-	public static void setEnabled(boolean b) {
+	public void setEnabled(boolean b) {
 		enabled = b;
 		if (!enabled)
 			move.x = -1;
 	}
 
-	public static Point getMove() throws InterruptedException {
+	public Point getMove() throws InterruptedException {
 		if (move.x == -1) {
 			synchronized (move) {
 				move.wait();

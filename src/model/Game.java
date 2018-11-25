@@ -31,7 +31,7 @@ public class Game {
 			mapPlayer2.addObserver(viewMap2);
 			mapPlayer2.update();
 
-			player1 = new Human(mapPlayer1, mapPlayer2);
+			player1 = new Human(mapPlayer1, mapPlayer2, ((ViewOpponentMap) viewMap2).getController());
 			player2 = new Computer(mapPlayer2, mapPlayer1, new Random());
 			break;
 		case twoPlayer:

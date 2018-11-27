@@ -45,10 +45,6 @@ public class Boat {
 		vertical = true;
 	}
 
-	public void takeDamage() {
-
-	}
-
 	public boolean isAlive() {
 		return (life > 0);
 	}
@@ -126,7 +122,8 @@ public class Boat {
 
 	@Override
 	public String toString() {
-		return "Boat [life=" + life + ", name=" + name + ", posX=" + posX + ", posY=" + posY + ", nbCases=" + nbCases
-				+ ", vertical=" + vertical + "]";
+		return "Boat [life=" + life + ", name=" + name + ", posX=" + posX
+				+ ", posY=" + posY + ", nbCases=" + nbCases + ", vertical="
+				+ vertical + "]";
 	}
 }

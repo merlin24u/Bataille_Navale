@@ -17,7 +17,8 @@ public abstract class ViewMap extends JPanel implements Observer {
 	protected ViewMap(Map m) {
 		map = m;
 		int size = Map.SIZE;
-		this.setPreferredSize(new Dimension(size * ViewMap.SCALE, size * ViewMap.SCALE));
+		this.setPreferredSize(new Dimension(size * ViewMap.SCALE, size
+				* ViewMap.SCALE));
 		this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 	}
 
@@ -33,14 +34,33 @@ public abstract class ViewMap extends JPanel implements Observer {
 
 		drawGrid(g);
 		draw(g);
+		drawShot(g);
 		System.out.println(map);
 	}
 
 	private void drawGrid(Graphics g) {
 		for (int i = 1; i < Map.SIZE; i++) {
 			g.setColor(Color.BLUE);
-			g.drawLine(i * ViewMap.SCALE, 0, i * ViewMap.SCALE, this.getHeight());
+			g.drawLine(i * ViewMap.SCALE, 0, i * ViewMap.SCALE,
+					this.getHeight());
 			g.drawLine(0, i * ViewMap.SCALE, this.getWidth(), i * ViewMap.SCALE);
+		}
+	}
+
+	private void drawShot(Graphics g) {
+		int[][] grid = map.getGrid();
+		for (int i = 0; i < grid.length; i++) {
+			for (int j = 0; j < grid.length; j++) {
+				if (grid[i][j] == Map.MISSED) {
+					g.setColor(Color.BLUE);
+					g.fillOval(i * ViewMap.SCALE, j * ViewMap.SCALE,
+							ViewMap.SCALE, ViewMap.SCALE);
+				} else if (grid[i][j] == Map.SHOT) {
+					g.setColor(Color.RED);
+					g.fillOval(i * ViewMap.SCALE, j * ViewMap.SCALE,
+							ViewMap.SCALE, ViewMap.SCALE);
+				}
+			}
 		}
 	}
 }

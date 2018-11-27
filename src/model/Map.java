@@ -46,7 +46,7 @@ public class Map extends Observable {
 	}
 
 	public void attack(int x, int y) {
-		if (grid[x][y] != SHOT && grid[x][y] != MISSED) {
+		if (grid[x][y] == 0) {
 			boolean shot = false;
 			for (Boat b : listBoat) {
 				if (b.isAlive() && b.isShot(x, y)) {

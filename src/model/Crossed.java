@@ -1,11 +1,13 @@
 package model;
 
+import java.awt.Point;
+
 public class Crossed implements ShootStrategy {
 
 	@Override
-	public void shoot() {
-		// TODO Auto-generated method stub
-		
+	public Point shoot(Map m) {
+		return null;
+
 	}
 
 }

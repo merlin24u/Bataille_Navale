@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Point;
+
 public class Computer extends Player {
 
 	private ShootStrategy strat;
@@ -11,7 +13,8 @@ public class Computer extends Player {
 
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
+		Point move = strat.shoot(super.getOpponentMap());
+		super.getOpponentMap().attack(move.x, move.y);
 	}
 
 }

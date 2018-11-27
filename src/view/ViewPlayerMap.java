@@ -13,14 +13,16 @@ public class ViewPlayerMap extends ViewMap {
 	public void draw(Graphics g) {
 		System.out.println("Player");
 		for (Boat b : map.getBoats()) {
-			int nbCases = b.getNbCases() * ViewMap.SCALE;
-			int xb = b.getPosX() * ViewMap.SCALE;
-			int yb = b.getPosY() * ViewMap.SCALE;
+			if (b.isAlive()) {
+				int nbCases = b.getNbCases() * ViewMap.SCALE;
+				int xb = b.getPosX() * ViewMap.SCALE;
+				int yb = b.getPosY() * ViewMap.SCALE;
 
-			if (b.isVertical())
-				g.fillRect(xb, yb, ViewMap.SCALE, nbCases);
-			else
-				g.fillRect(xb, yb, nbCases, ViewMap.SCALE);
+				if (b.isVertical())
+					g.fillRect(xb, yb, ViewMap.SCALE, nbCases);
+				else
+					g.fillRect(xb, yb, nbCases, ViewMap.SCALE);
+			}
 		}
 	}
 }

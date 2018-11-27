@@ -1,4 +1,4 @@
 # Bataille_Navale
 
-Paul Merlin
-Quentin Thouvenot 
+# Paul Merlin
+# Quentin Thouvenot 

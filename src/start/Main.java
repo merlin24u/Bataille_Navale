@@ -2,6 +2,7 @@ package start;
 
 import engine.GameEngineGraphical;
 import model.Game;
+import model.XVIe;
 import model.XXe;
 
 public class Main {

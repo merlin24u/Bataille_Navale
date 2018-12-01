@@ -73,7 +73,7 @@ public class Boat {
 		return nbCases;
 	}
 
-	// ne fonctionne pas bien
+	// a vérifier
 	public boolean checkPosition(Boat b) {
 		if (this.vertical && b.vertical) {
 			if (this.posX == b.posX) {
@@ -122,8 +122,7 @@ public class Boat {
 
 	@Override
 	public String toString() {
-		return "Boat [life=" + life + ", name=" + name + ", posX=" + posX
-				+ ", posY=" + posY + ", nbCases=" + nbCases + ", vertical="
-				+ vertical + "]";
+		return "Boat [life=" + life + ", name=" + name + ", posX=" + posX + ", posY=" + posY + ", nbCases=" + nbCases
+				+ ", vertical=" + vertical + "]";
 	}
 }

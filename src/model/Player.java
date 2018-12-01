@@ -1,7 +1,5 @@
 package model;
 
-import controller.MapController;
-
 public abstract class Player {
 
 	private Map myMap, opponentMap;

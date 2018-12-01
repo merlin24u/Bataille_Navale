@@ -16,8 +16,6 @@ public class ViewPlayerMap extends ViewMap {
 	}
 
 	public void draw(Graphics g) {
-		System.out.println("Player");
-
 		for (Boat b : map.getBoats()) {
 			try {
 				if (b.isAlive()) {
@@ -26,14 +24,10 @@ public class ViewPlayerMap extends ViewMap {
 					int yb = b.getPosY() * ViewMap.SCALE;
 
 					if (b.isVertical())
-						g.drawImage(
-								TextureFactory.getInstance().getTexture(
-										b.getName()), xb, yb, ViewMap.SCALE,
+						g.drawImage(TextureFactory.getInstance().getTexture(b.getName()), xb, yb, ViewMap.SCALE,
 								nbCases, null);
 					else
-						g.drawImage(
-								TextureFactory.getInstance().getTexture(
-										b.getName() + "_Hor"), xb, yb, nbCases,
+						g.drawImage(TextureFactory.getInstance().getTexture(b.getName() + "_Hor"), xb, yb, nbCases,
 								ViewMap.SCALE, null);
 				}
 			} catch (Exception e) {

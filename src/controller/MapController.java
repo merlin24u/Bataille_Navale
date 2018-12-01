@@ -16,12 +16,10 @@ public class MapController implements MouseListener {
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
+	public synchronized void mouseClicked(MouseEvent e) {
 		if (enabled) {
-			synchronized (move) {
-				move.setLocation(e.getX() / ViewMap.SCALE, e.getY() / ViewMap.SCALE);
-				move.notify();
-			}
+			move.setLocation(e.getX() / ViewMap.SCALE, e.getY() / ViewMap.SCALE);
+			notify();
 		}
 	}
 
@@ -55,12 +53,10 @@ public class MapController implements MouseListener {
 			move.x = -1;
 	}
 
-	public Point getMove() throws InterruptedException {
-		if (move.x == -1) {
-			synchronized (move) {
-				move.wait();
-			}
-		}
+	public synchronized Point getMove() throws InterruptedException {
+		while (move.x == -1)
+			wait();
+
 		return move;
 	}
 }

@@ -1,16 +1,18 @@
-package view;
+package client.view;
 
 import java.awt.Graphics;
-import controller.MapController;
-import model.Map;
+
+import client.controller.MapController;
+import client.model.MapModel;
+import shared.Map;
 
 public class ViewOpponentMap extends ViewMap {
 
 	private MapController controller;
 
-	public ViewOpponentMap(Map m) {
+	public ViewOpponentMap(MapModel m, MapController c) {
 		super(m);
-		controller = new MapController();
+		controller = c;
 		this.addMouseListener(controller);
 	}
 

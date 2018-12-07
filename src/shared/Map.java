@@ -1,10 +1,13 @@
-package model;
+package shared;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
-public class Map extends Observable {
+import server.model.GameImpl;
+
+public class Map implements Serializable{
 	public static final int MISSED = -1;
 	public static final int SHOT = 1;
 	public static final int SIZE = 10;
@@ -19,7 +22,7 @@ public class Map extends Observable {
 		Boat b;
 
 		for (int i = 0; i < 2; i++) {
-			b = Game.epoque.getBoat2Cases();
+			b = GameImpl.epoque.getBoat2Cases();
 			do {
 				posX = (int) (Math.random() * (SIZE - 1));
 				posY = (int) (Math.random() * (SIZE - 1));
@@ -32,7 +35,7 @@ public class Map extends Observable {
 		}
 
 		for (int i = 0; i < 1; i++) {
-			b = Game.epoque.getBoat4Cases();
+			b = GameImpl.epoque.getBoat4Cases();
 			do {
 				posX = (int) (Math.random() * (SIZE - 1));
 				posY = (int) (Math.random() * (SIZE - 1));
@@ -86,8 +89,8 @@ public class Map extends Observable {
 	}
 
 	public void update() {
-		setChanged();
-		notifyObservers();
+//		setChanged();
+//		notifyObservers();
 	}
 
 	public List<Boat> getBoats() {

@@ -1,17 +1,19 @@
-package view;
+package client.view;
 
 import java.awt.Graphics;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 
-import texture.TextureFactory;
-import model.Boat;
-import model.Map;
+import client.controller.MapController;
+import client.model.MapModel;
+import client.texture.TextureFactory;
+import shared.Boat;
+import shared.Map;
 
 public class ViewPlayerMap extends ViewMap {
 
-	public ViewPlayerMap(Map m) {
+	public ViewPlayerMap(MapModel m) {
 		super(m);
 	}
 

@@ -1,6 +1,8 @@
-package model;
+package shared;
 
-public class Boat {
+import java.io.Serializable;
+
+public class Boat implements Serializable{
 
 	private int life;
 	private String name;

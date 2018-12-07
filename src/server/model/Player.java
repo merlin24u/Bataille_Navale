@@ -1,4 +1,6 @@
-package model;
+package server.model;
+
+import shared.Map;
 
 public abstract class Player {
 

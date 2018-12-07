@@ -1,4 +1,4 @@
-package texture;
+package client.texture;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

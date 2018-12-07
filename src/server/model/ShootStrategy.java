@@ -1,6 +1,8 @@
-package model;
+package server.model;
 
 import java.awt.Point;
+
+import shared.Map;
 
 public interface ShootStrategy {
 

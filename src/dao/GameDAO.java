@@ -1,6 +1,6 @@
 package dao;
 
-import model.Game;
+import shared.Game;
 
 public interface GameDAO {
 

@@ -1,4 +1,4 @@
-package view;
+package client.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -7,16 +7,21 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-import model.Map;
+
+import client.controller.MapController;
+import client.model.MapModel;
+import shared.Map;
 
 public abstract class ViewMap extends JPanel implements Observer {
 
 	public static int SCALE = 50;
-	protected Map map;
+	protected MapModel map;
 
-	protected ViewMap(Map m) {
+	protected ViewMap(MapModel m) {
 		map = m;
 		int size = Map.SIZE;
+		m.addObserver(this);
+		
 		this.setPreferredSize(new Dimension(size * ViewMap.SCALE, size
 				* ViewMap.SCALE));
 		this.setBorder(BorderFactory.createLineBorder(Color.BLACK));

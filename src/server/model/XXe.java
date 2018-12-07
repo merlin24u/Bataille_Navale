@@ -1,4 +1,6 @@
-package model;
+package server.model;
+
+import shared.Boat;
 
 public class XXe implements Epoque {
 

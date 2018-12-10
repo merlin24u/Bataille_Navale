@@ -4,17 +4,21 @@ import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-
 import server.model.Epoque;
 import server.model.GameImpl;
 import server.model.XVIe;
 import server.model.XXe;
-import shared.Boat;
 import shared.Game;
 
 public class Main {
 
 	public static void main(String[] args) {
+
+		if (args.length != 2) {
+			System.out
+					.println("commande : java server.start.Main -mode -epoque");
+			System.exit(1);
+		}
 
 		try {
 			System.out.println("Constructing server	implementation...");

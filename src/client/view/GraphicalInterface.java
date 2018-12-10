@@ -14,8 +14,8 @@ public class GraphicalInterface {
 
 	private JPanel pane;
 
-	public GraphicalInterface(MapModel myMap, MapModel oppenentMap, MapController c) {
-		JFrame f = new JFrame();
+	public GraphicalInterface(MapModel myMap, MapModel oppenentMap, MapController c, int playerId) {
+		JFrame f = new JFrame("Player"+(playerId+1));
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		pane = new JPanel();

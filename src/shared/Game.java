@@ -9,4 +9,5 @@ public interface Game extends Remote {
 	public Map getMap2(int playerId) throws RemoteException;
 	public void play(int playerId, int posX, int posY) throws RemoteException;
 	public boolean isFinished() throws RemoteException;
+	public int getWinner() throws RemoteException;
 }

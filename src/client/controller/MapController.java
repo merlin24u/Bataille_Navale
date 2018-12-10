@@ -18,7 +18,6 @@ public class MapController implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		this.setMove(new Point(e.getX() / ViewMap.SCALE, e.getY() / ViewMap.SCALE));
-		System.out.println(move);
 	}
 
 	@Override

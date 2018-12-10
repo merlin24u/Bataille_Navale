@@ -109,12 +109,24 @@ public class GameImpl extends UnicastRemoteObject implements Game{
 			else {
 				players[0].play();
 			}
+			
 			if(mode == onePlayer) {
 				players[playerId].play();
 			}
 			
-			
+			finished = players[0].isGameOver() || players[1].isGameOver();
 		}
+		
+	}
+
+	@Override
+	public int getWinner() throws RemoteException {
+		// TODO Auto-generated method stub
+		if (players[0].isGameOver())
+			return 1;
+		if (players[1].isGameOver())
+			return 0;
+		return -1;
 	}
 
 //	public ViewMap getViewMap1() {

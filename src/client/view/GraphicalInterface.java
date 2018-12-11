@@ -15,21 +15,21 @@ public class GraphicalInterface {
 	private JPanel pane;
 
 	public GraphicalInterface(MapModel myMap, MapModel oppenentMap, MapController c, int playerId) {
-		JFrame f = new JFrame("Player"+(playerId+1));
+		JFrame f = new JFrame("Player" + (playerId + 1));
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		pane = new JPanel();
 		pane.setLayout(new BorderLayout());
 		pane.add(new ViewPlayerMap(myMap), BorderLayout.EAST);
 		pane.add(new ViewOpponentMap(oppenentMap, c), BorderLayout.WEST);
-	
+
 		f.setContentPane(pane);
 		f.setResizable(false);
 		f.pack();
 		f.setVisible(true);
-		
+
 		f.setLocationRelativeTo(null);
-		
+
 		f.getContentPane().setFocusable(true);
 		f.getContentPane().requestFocus();
 	}

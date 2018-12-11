@@ -18,7 +18,7 @@ public class ViewOpponentMap extends ViewMap {
 
 	@Override
 	public void draw(Graphics g) {
-		// ne fait rien
+		// nothing
 	}
 
 	public MapController getController() {

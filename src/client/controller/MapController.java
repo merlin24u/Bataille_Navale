@@ -7,10 +7,9 @@ import java.awt.event.MouseListener;
 import client.view.ViewMap;
 
 public class MapController implements MouseListener {
-	
+
 	private Point move;
-	
-	
+
 	public MapController() {
 		this.move = new Point(-1, -1);
 	}
@@ -47,11 +46,11 @@ public class MapController implements MouseListener {
 	public Point getMove() {
 		return this.move;
 	}
-	
+
 	public void setMove(Point move) {
 		this.move = move;
 	}
-	
+
 	public void resetMove() {
 		this.move.x = -1;
 		this.move.y = -1;

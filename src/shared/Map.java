@@ -7,7 +7,7 @@ import java.util.Observable;
 
 import server.model.GameImpl;
 
-public class Map implements Serializable{
+public class Map implements Serializable {
 	public static final int MISSED = -1;
 	public static final int SHOT = 1;
 	public static final int SIZE = 10;
@@ -65,8 +65,6 @@ public class Map implements Serializable{
 				nbMissedShot++;
 
 			}
-
-			//update();
 		}
 	}
 
@@ -87,11 +85,6 @@ public class Map implements Serializable{
 
 		return true;
 	}
-
-//	public void update() {
-////		setChanged();
-////		notifyObservers();
-//	}
 
 	public List<Boat> getBoats() {
 		return this.listBoat;

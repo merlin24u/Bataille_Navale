@@ -7,16 +7,14 @@ import javax.imageio.ImageIO;
 public class TextureFactory {
 
 	public static TextureFactory instance;
-	private BufferedImage cruiser, cruiser_Hor, patrolShip, patrolShip_Hor,
-			galleon, galleon_Hor, caravel, caravel_Hor;
-	private BufferedImage plouf,boom;
+	private BufferedImage cruiser, cruiser_Hor, patrolShip, patrolShip_Hor, galleon, galleon_Hor, caravel, caravel_Hor;
+	private BufferedImage plouf, boom;
 
 	private TextureFactory() throws IOException {
 		cruiser = ImageIO.read(ResourceLoader.load("XXe/cruiser.png"));
 		cruiser_Hor = ImageIO.read(ResourceLoader.load("XXe/cruiser_Hor.png"));
 		patrolShip = ImageIO.read(ResourceLoader.load("XXe/patrolShip.png"));
-		patrolShip_Hor = ImageIO.read(ResourceLoader
-				.load("XXe/patrolShip_Hor.png"));
+		patrolShip_Hor = ImageIO.read(ResourceLoader.load("XXe/patrolShip_Hor.png"));
 		galleon = ImageIO.read(ResourceLoader.load("XVIe/galleon.png"));
 		galleon_Hor = ImageIO.read(ResourceLoader.load("XVIe/galleon_Hor.png"));
 		caravel = ImageIO.read(ResourceLoader.load("XVIe/caravel.png"));

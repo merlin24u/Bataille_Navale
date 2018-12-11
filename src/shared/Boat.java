@@ -2,7 +2,7 @@ package shared;
 
 import java.io.Serializable;
 
-public class Boat implements Serializable{
+public class Boat implements Serializable {
 
 	private int life;
 	private String name;
@@ -75,7 +75,6 @@ public class Boat implements Serializable{
 		return nbCases;
 	}
 
-	// a vérifier
 	public boolean checkPosition(Boat b) {
 		if (this.vertical && b.vertical) {
 			if (this.posX == b.posX) {

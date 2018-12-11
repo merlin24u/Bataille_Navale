@@ -1,7 +1,6 @@
 package server.model;
 
 import java.awt.Point;
-
 import shared.Map;
 
 public class Computer extends Player {

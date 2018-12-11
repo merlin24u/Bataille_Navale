@@ -23,6 +23,7 @@ public class GameXmlDAO implements GameDAO {
 
 	@Override
 	public void save(Game game) {
+		// not implemened
 	}
 
 	public static GameXmlDAO getInstance() {

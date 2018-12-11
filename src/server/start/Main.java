@@ -15,8 +15,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		if (args.length != 2) {
-			System.out
-					.println("commande : java server.start.Main -mode -epoque");
+			System.out.println("commande : java server.start.Main <mode> <epoque>");
 			System.exit(1);
 		}
 
@@ -54,7 +53,6 @@ public class Main {
 			System.out.println("Waiting	for	invocations	from clients...");
 
 		} catch (RemoteException | AlreadyBoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

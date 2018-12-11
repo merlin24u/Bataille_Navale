@@ -66,7 +66,7 @@ public class Map implements Serializable{
 
 			}
 
-			update();
+			//update();
 		}
 	}
 
@@ -88,10 +88,10 @@ public class Map implements Serializable{
 		return true;
 	}
 
-	public void update() {
-//		setChanged();
-//		notifyObservers();
-	}
+//	public void update() {
+////		setChanged();
+////		notifyObservers();
+//	}
 
 	public List<Boat> getBoats() {
 		return this.listBoat;

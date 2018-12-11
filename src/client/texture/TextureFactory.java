@@ -9,6 +9,7 @@ public class TextureFactory {
 	public static TextureFactory instance;
 	private BufferedImage cruiser, cruiser_Hor, patrolShip, patrolShip_Hor,
 			galleon, galleon_Hor, caravel, caravel_Hor;
+	private BufferedImage plouf,boom;
 
 	private TextureFactory() throws IOException {
 		cruiser = ImageIO.read(ResourceLoader.load("XXe/cruiser.png"));
@@ -20,6 +21,8 @@ public class TextureFactory {
 		galleon_Hor = ImageIO.read(ResourceLoader.load("XVIe/galleon_Hor.png"));
 		caravel = ImageIO.read(ResourceLoader.load("XVIe/caravel.png"));
 		caravel_Hor = ImageIO.read(ResourceLoader.load("XVIe/caravel_Hor.png"));
+		plouf = ImageIO.read(ResourceLoader.load("img/plouf.png"));
+		boom = ImageIO.read(ResourceLoader.load("img/boom.png"));
 	}
 
 	public BufferedImage getTexture(String texture) throws Exception {
@@ -40,6 +43,10 @@ public class TextureFactory {
 			return caravel;
 		case "caravel_Hor":
 			return caravel_Hor;
+		case "plouf":
+			return plouf;
+		case "boom":
+			return boom;
 		default:
 			throw new Exception("not implemented");
 		}

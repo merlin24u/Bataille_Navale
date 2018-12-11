@@ -6,13 +6,9 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
-
 import client.controller.MapController;
 import client.model.MapModel;
 import client.view.GraphicalInterface;
-import client.view.ViewMap;
-import client.view.ViewPlayerMap;
 import shared.Game;
 
 public class Main {

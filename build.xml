@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="DP2018_Bataille_Navale" default="build" basedir=".">
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="bin" location="bin"/>
+  <property name="res" location="res"/>
+
+  <target name="init">
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${bin}"/>
+  </target>
+
+  <target name="build" depends="init">
+    <!-- Compile the Java code from ${src} into ${bin} -->
+    <javac srcdir="${src}" destdir="${bin}" includeantruntime="false"/>
+    <copy todir="${bin}">
+      <fileset dir="${res}">
+	<include name="**/*.png"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="server" depends="build">
+    <java classname="server.start.Main" classpath="${bin}" failonerror="true" fork="true">
+      <arg value="${mode}"/>
+      <arg value="${epoque}"/>
+    </java>
+  </target>
+
+  <target name="client" depends="build">
+    <java classname="client.start.Main" classpath="${bin}" failonerror="true" fork="true"/>
+  </target>
+
+  <target name="clean">
+    <!-- Delete the ${build} directory tree -->
+    <delete dir="${bin}"/>
+  </target>
+</project>
